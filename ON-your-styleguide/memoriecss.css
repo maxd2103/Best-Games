@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
+.body {
+    height: 91vh;
     display: flex;
     background: #353535;
 }
@@ -54,18 +54,6 @@ body {
     transform: rotateY(180deg);
 }
 
-footer {
-    width: 110px;
-    position: absolute;
-    top: 94%;
-    left: 50%;
-    margin-left: -55px;
-    color: #d4d4d4;
-    font-family: Roboto;
-    font-size: 10px;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
 
 a {
     color: #f78f8f;

@@ -1,9 +1,8 @@
 //Die zwei ausgelagerten Funktionen werden importiert.
-import { playSound } from "./memorieaudio";
-import { showPlayAgainAlert } from "./memorienotification";
+import { showPlayAgainAlert } from "./memorienotification.js";
 
 //Alle memory-card Elemente werden als Karten definiert.
-const cards = document.querySelectorAll<HTMLElement>(".memory-card");
+const cards = document.querySelectorAll('.memory-card');
 
 //Fremdcode: Die Variable hasFlippedCard wird standardgemäß auf falsch gesetzt.
 let hasFlippedCard = false;
@@ -15,12 +14,12 @@ let lockBoard = false;
 let firstCard, secondCard;
 
 //Fremdcode: Für jede Karte wird ein Event Listener hinzugefügt: Bei einem Klick-Event wird die Funktion flipCard ausgeführt.
-cards.forEach((card) => card.addEventListener("click", startMemoryGame));
+cards.forEach(card => card.addEventListener('click', startMemoryGame));
 
 //Die Funktion wird in die index.ts exportiert.
-export function startMemoryGame(this) {
+export function startMemoryGame() {
   //Die Audio-Datei wird abgespielt, sobald eine Karte umgedreht wird.
-  playSound("#cardSound");
+  
   //Fremdcode: Wenn lockBoard true ist (also das Board gesperrt ist), wird der Rest der Funktion nicht ausgeführt.
   if (lockBoard) return;
   //Wenn die angeklickte Karte die erste ist die angeklickt wurde, wird der restliche Code der Funktion nicht ausgeführt.
@@ -53,10 +52,7 @@ function checkForMatch() {
   //Fremdcode: Checken ob Karten identisch sind: Durch dataset kann man data-framework Attribut der HTML abrufen. Eigener Zusatz: Optional Chaining durch den ? Operator. Wenn firstCard bzw. secondCard definiert ist, wird der Code ausgeführt, wenn nicht wird der Vorgang gestoppt und "undefined" zurückgegeben.
   if (firstCard?.dataset.framework === secondCard?.dataset.framework) {
     disableCards();
-    //Die Audio-Datei wird nach einer Verzögerung von 500ms abgespielt, wenn zwei umgedrehte Karten identisch sind.
-    setTimeout(() => {
-      playSound("#matchSound");
-    }, 500);
+    
   } else {
     unflipCards();
   }
@@ -77,7 +73,7 @@ function unflipCards() {
   //Fremdcode: Timeout hinzufügen: Es dauert nach dem Aufdecken beider Karten 1 Sekunde bis die else-Schleife ausgeführt wird.
   setTimeout(() => {
     //Wenn Karten verschieden sind, wird die Audio-Datei ausgeführt und die Klasse flip von ihnen entfernt. Optional Chaining wird wieder verwendet.
-    playSound("#noMatch");
+    
     firstCard?.classList.remove("flip");
     secondCard?.classList.remove("flip");
 
