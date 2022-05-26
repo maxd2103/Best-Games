@@ -1,6 +1,6 @@
 /* I don't think this actually works on most devices yet...*/
 :root {
-    --font-color: #FCB42A;
+    --font-color: hsl(39, 97%, 58%);
     --bg-color: #000022;
     --board-color: #2121DE;
     --x-color: #FFFF00;
@@ -12,21 +12,24 @@
   
   * {
     box-sizing: border-box;
+    background: #000022;
   }
   
-  html {
+  .html {
     background: #000022;
-    margin: 2rem 0;
+    margin: 0;
     font-size: 16px;
     line-height: 1.5;
     padding: 0;
     font-family: 'Press Start 2P', sans-serif;
     color: #FCB42A;
+    height: 70vh;
   }
   
   #game {
     max-width: 450px;
     margin: 0 auto;
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
   }
