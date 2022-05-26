@@ -8,12 +8,17 @@
     <script src="/dist/stencil-starter-on/stencil-starter-on.esm.js" type="module"></script>
     <link rel="stylesheet" href="/dist/stencil-starter-on/stencil-starter-on.css" />
     <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./sp.css" />
     <title>Space Pilot</title>
     <script type="text/javascript" src="/ON-your-styleguide/script.js" defer></script>
 </head>
 
-<body>
+<body onload="startGame()">
     <nav-bar></nav-bar>
+    <canvas id= "canvas" width="640" height="427"></canvas>
+
+    <script src="sp.js"></script>
+
     <footer-bar></footer-bar>
 </body>
 

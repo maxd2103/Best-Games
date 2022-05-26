@@ -15,8 +15,8 @@ export class KeyVisual {
         <div class="keyvisual">
         <div class="wrapper">
             <div class="text">
-              <h2>Du möchtest deine Körper in From bringen?</h2>
-              <h1>Nutze unsere Supplement</h1>
+              <h2>Du willst mehr über Unsere Psiele wissen?</h2>
+              <h1>Nutze jetzte deine Chance</h1>
               <a class="button" href="#">Mehr erfahren</a>
             </div>
             <aside>
