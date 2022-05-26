@@ -14,8 +14,22 @@
 
 <body>
     <nav-bar></nav-bar>
+    <anleitungen-component spielname="Memorie" anleitung="Memorie funktioniert so und so"></anleitungen-component>
+    <button onclick="myFunction()">Try it</button>
     <key-visual></key-visual>
     <footer-bar></footer-bar>
-</body>
 
+
+</body>
+<script>
+
+function myFunction() {
+  
+  if (anleitungText.style.display === "none") {
+    anleitungText.style.display= "block";
+  } else {
+    anleitungText.style.display = "none";
+  }
+}
+</script>
 </html>
