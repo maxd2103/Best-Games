@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+footer {
+	background-color: #7E8E98;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	width: 100%;
+}
+
+
+nav.footer {
+	float: right;
+}
+nav.footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav.footer ul li {
+	display: inline-block;
+}
+nav.footer a {
+	text-decoration: none;
+	padding: 40px 20px;
+	color: #fff;
+	line-height: 20px;
+	height: 10px;
+	display: block;
+}
