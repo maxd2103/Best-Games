@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AnleitungenComponent {
+        "anleitung": string;
+        "spielname": string;
+    }
+    interface ButtonGenerate {
+    }
     interface ExampleComponent {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
@@ -32,6 +38,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAnleitungenComponentElement extends Components.AnleitungenComponent, HTMLStencilElement {
+    }
+    var HTMLAnleitungenComponentElement: {
+        prototype: HTMLAnleitungenComponentElement;
+        new (): HTMLAnleitungenComponentElement;
+    };
+    interface HTMLButtonGenerateElement extends Components.ButtonGenerate, HTMLStencilElement {
+    }
+    var HTMLButtonGenerateElement: {
+        prototype: HTMLButtonGenerateElement;
+        new (): HTMLButtonGenerateElement;
+    };
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
     }
     var HTMLExampleComponentElement: {
@@ -63,6 +81,8 @@ declare global {
         new (): HTMLNavBarElement;
     };
     interface HTMLElementTagNameMap {
+        "anleitungen-component": HTMLAnleitungenComponentElement;
+        "button-generate": HTMLButtonGenerateElement;
         "example-component": HTMLExampleComponentElement;
         "footer-bar": HTMLFooterBarElement;
         "key-visual": HTMLKeyVisualElement;
@@ -71,6 +91,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AnleitungenComponent {
+        "anleitung"?: string;
+        "spielname"?: string;
+    }
+    interface ButtonGenerate {
+    }
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
@@ -96,6 +122,8 @@ declare namespace LocalJSX {
     interface NavBar {
     }
     interface IntrinsicElements {
+        "anleitungen-component": AnleitungenComponent;
+        "button-generate": ButtonGenerate;
         "example-component": ExampleComponent;
         "footer-bar": FooterBar;
         "key-visual": KeyVisual;
@@ -107,6 +135,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "anleitungen-component": LocalJSX.AnleitungenComponent & JSXBase.HTMLAttributes<HTMLAnleitungenComponentElement>;
+            "button-generate": LocalJSX.ButtonGenerate & JSXBase.HTMLAttributes<HTMLButtonGenerateElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "footer-bar": LocalJSX.FooterBar & JSXBase.HTMLAttributes<HTMLFooterBarElement>;
             "key-visual": LocalJSX.KeyVisual & JSXBase.HTMLAttributes<HTMLKeyVisualElement>;

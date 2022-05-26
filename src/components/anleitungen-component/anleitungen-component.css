@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+.anleitungText{
+
+  z-index: 400;
+  margin-top: 200px;
+  margin-left: 400px;
+  background-color: rgb(21, 182, 21);
+  height: 200px;
+  width: 400px;
+  position:fixed; 
+}
+
