@@ -17,6 +17,8 @@
   align-items: center;
   justify-content: center;
   font-family: inherit;
+  margin-top: 400px;
+  margin-right: 100px;
 }
 
 .btn.primary {
