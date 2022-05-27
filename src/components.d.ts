@@ -7,10 +7,15 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AnleitungenComponent {
-        "anleitung": string;
-        "spielname": string;
+        "appearance": string;
+        "buttons": string;
+        "closeIcon": string;
+        "header": string;
+        "isopen": boolean;
     }
-    interface ButtonGenerate {
+    interface ButtonsComponent {
+        "aussehen": string;
+        "text": string;
     }
     interface ExampleComponent {
         "exampleProp": string;
@@ -44,11 +49,11 @@ declare global {
         prototype: HTMLAnleitungenComponentElement;
         new (): HTMLAnleitungenComponentElement;
     };
-    interface HTMLButtonGenerateElement extends Components.ButtonGenerate, HTMLStencilElement {
+    interface HTMLButtonsComponentElement extends Components.ButtonsComponent, HTMLStencilElement {
     }
-    var HTMLButtonGenerateElement: {
-        prototype: HTMLButtonGenerateElement;
-        new (): HTMLButtonGenerateElement;
+    var HTMLButtonsComponentElement: {
+        prototype: HTMLButtonsComponentElement;
+        new (): HTMLButtonsComponentElement;
     };
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
     }
@@ -82,7 +87,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "anleitungen-component": HTMLAnleitungenComponentElement;
-        "button-generate": HTMLButtonGenerateElement;
+        "buttons-component": HTMLButtonsComponentElement;
         "example-component": HTMLExampleComponentElement;
         "footer-bar": HTMLFooterBarElement;
         "key-visual": HTMLKeyVisualElement;
@@ -92,10 +97,16 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AnleitungenComponent {
-        "anleitung"?: string;
-        "spielname"?: string;
+        "appearance"?: string;
+        "buttons"?: string;
+        "closeIcon"?: string;
+        "header"?: string;
+        "isopen"?: boolean;
+        "onAction"?: (event: CustomEvent<any>) => void;
     }
-    interface ButtonGenerate {
+    interface ButtonsComponent {
+        "aussehen"?: string;
+        "text"?: string;
     }
     interface ExampleComponent {
         "exampleProp"?: string;
@@ -123,7 +134,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "anleitungen-component": AnleitungenComponent;
-        "button-generate": ButtonGenerate;
+        "buttons-component": ButtonsComponent;
         "example-component": ExampleComponent;
         "footer-bar": FooterBar;
         "key-visual": KeyVisual;
@@ -136,7 +147,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "anleitungen-component": LocalJSX.AnleitungenComponent & JSXBase.HTMLAttributes<HTMLAnleitungenComponentElement>;
-            "button-generate": LocalJSX.ButtonGenerate & JSXBase.HTMLAttributes<HTMLButtonGenerateElement>;
+            "buttons-component": LocalJSX.ButtonsComponent & JSXBase.HTMLAttributes<HTMLButtonsComponentElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "footer-bar": LocalJSX.FooterBar & JSXBase.HTMLAttributes<HTMLFooterBarElement>;
             "key-visual": LocalJSX.KeyVisual & JSXBase.HTMLAttributes<HTMLKeyVisualElement>;
