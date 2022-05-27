@@ -12,6 +12,8 @@ export namespace Components {
     }
     interface ButtonGenerate {
     }
+    interface ContactForm {
+    }
     interface ExampleComponent {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
@@ -36,6 +38,10 @@ export namespace Components {
     }
     interface NavBar {
     }
+    interface StarRating {
+        "maxValue": number;
+        "value": number;
+    }
 }
 declare global {
     interface HTMLAnleitungenComponentElement extends Components.AnleitungenComponent, HTMLStencilElement {
@@ -49,6 +55,12 @@ declare global {
     var HTMLButtonGenerateElement: {
         prototype: HTMLButtonGenerateElement;
         new (): HTMLButtonGenerateElement;
+    };
+    interface HTMLContactFormElement extends Components.ContactForm, HTMLStencilElement {
+    }
+    var HTMLContactFormElement: {
+        prototype: HTMLContactFormElement;
+        new (): HTMLContactFormElement;
     };
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
     }
@@ -80,14 +92,22 @@ declare global {
         prototype: HTMLNavBarElement;
         new (): HTMLNavBarElement;
     };
+    interface HTMLStarRatingElement extends Components.StarRating, HTMLStencilElement {
+    }
+    var HTMLStarRatingElement: {
+        prototype: HTMLStarRatingElement;
+        new (): HTMLStarRatingElement;
+    };
     interface HTMLElementTagNameMap {
         "anleitungen-component": HTMLAnleitungenComponentElement;
         "button-generate": HTMLButtonGenerateElement;
+        "contact-form": HTMLContactFormElement;
         "example-component": HTMLExampleComponentElement;
         "footer-bar": HTMLFooterBarElement;
         "key-visual": HTMLKeyVisualElement;
         "my-component": HTMLMyComponentElement;
         "nav-bar": HTMLNavBarElement;
+        "star-rating": HTMLStarRatingElement;
     }
 }
 declare namespace LocalJSX {
@@ -96,6 +116,8 @@ declare namespace LocalJSX {
         "spielname"?: string;
     }
     interface ButtonGenerate {
+    }
+    interface ContactForm {
     }
     interface ExampleComponent {
         "exampleProp"?: string;
@@ -121,14 +143,21 @@ declare namespace LocalJSX {
     }
     interface NavBar {
     }
+    interface StarRating {
+        "maxValue"?: number;
+        "onRatingUpdated"?: (event: CustomEvent<any>) => void;
+        "value"?: number;
+    }
     interface IntrinsicElements {
         "anleitungen-component": AnleitungenComponent;
         "button-generate": ButtonGenerate;
+        "contact-form": ContactForm;
         "example-component": ExampleComponent;
         "footer-bar": FooterBar;
         "key-visual": KeyVisual;
         "my-component": MyComponent;
         "nav-bar": NavBar;
+        "star-rating": StarRating;
     }
 }
 export { LocalJSX as JSX };
@@ -137,11 +166,13 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "anleitungen-component": LocalJSX.AnleitungenComponent & JSXBase.HTMLAttributes<HTMLAnleitungenComponentElement>;
             "button-generate": LocalJSX.ButtonGenerate & JSXBase.HTMLAttributes<HTMLButtonGenerateElement>;
+            "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "footer-bar": LocalJSX.FooterBar & JSXBase.HTMLAttributes<HTMLFooterBarElement>;
             "key-visual": LocalJSX.KeyVisual & JSXBase.HTMLAttributes<HTMLKeyVisualElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
+            "star-rating": LocalJSX.StarRating & JSXBase.HTMLAttributes<HTMLStarRatingElement>;
         }
     }
 }
