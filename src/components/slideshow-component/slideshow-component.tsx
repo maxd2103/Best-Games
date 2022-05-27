@@ -20,7 +20,7 @@ export class SlideshowComponent {
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="src/components/slideshow-component/img-slideshow/memorie.png" />
+  <img src="img-slideshow/memorie.png" />
   <div class="text">Caption Text</div>
 </div>
 

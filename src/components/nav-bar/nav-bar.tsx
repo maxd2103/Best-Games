@@ -20,7 +20,7 @@ export class NavBar {
                                 <a href="home.html">Startseite</a>
                             </li>
                             <li>
-                                <a href="components.html">Components</a>
+                                <a href="feedback.html">Feedback</a>
                             </li>
                             <li>
                                 <a href="tic-tac-toe.html">TicTacToe</a>
