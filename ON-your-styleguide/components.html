@@ -16,17 +16,25 @@
     <nav-bar></nav-bar>
     <star-rating></star-rating>
     <contact-form></contact-form>
+    <slideshow-component></slideshow-component>
     <footer-bar></footer-bar>
+
 </body>
 <script>
-
-function myFunction() {
-  
-  if (anleitungText.style.display === "none") {
-    anleitungText.style.display= "block";
-  } else {
-    anleitungText.style.display = "none";
-  }
+var simpleSlides = function () {
+    var i;
+    var slides = document.querySelectorAll("slideshow-component");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].setAttribute("style","display:none");
+    }
+    count++;
+    if (count > slides.length) { count = 1; }
+    slides[count-1].setAttribute("style","display:block");
+    setTimeout(simpleSlides, 3600);
 }
+
+var count = 0;
+simpleSlides();
+
 </script>
 </html>
