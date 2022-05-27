@@ -20,8 +20,27 @@
     <div id="game"></div>
 
     <script src="tictactoe.js"></script>
+    <buttons-component class="button" id="open-modal" text="Anleitung" aussehen="primary"></buttons-component>
+      
+    <anleitungen-component header="Anleitung" appearance="primary"><anleitung-text text="Ziel des Spiels ist es, eine komplette Reihe mit dem eigenen Symbol auszufüllen. Vor dem Spiel müsst ihr festlegen, wer mit X und wer mit O spielt. X fängt dabei immer an.
+        Mit einem Klick auf ein beliebiges leeres Quadrat setzt ihr euer Symbol, anschließend ist automatisch der andere Spieler am Zug. Wenn ein Spieler eine vertikale, horizontale, oder diagonale Reihe mit dem eigenen Symbol ausgefüllt hat, ist das Spiel gewonnen.
+        Über dem Spielfeld ist noch ein Scoreboard, sodass ihr immer sehen könnt, wer wie oft gewonnen hat.
+        "></anleitung-text></anleitungen-component>
     </div>
+    
     <footer-bar></footer-bar>
 </body>
+<script >
+    var button = document.querySelector('#open-modal');
+    var modal = document.querySelector('anleitungen-component');
+   
+    button.addEventListener('click', function () {
+      modal.isopen = true;
+    });
+  
+    modal.addEventListener('action', function () {
+      console.log('Confirm pressed');
+    });
+  </script>
 
 </html>

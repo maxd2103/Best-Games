@@ -18,8 +18,22 @@
     <canvas id= "canvas" width="640" height="427"></canvas>
 
     <script src="sp.js"></script>
-
+    <buttons-component class="button" id="open-modal" text="Anleitung" aussehen="primary"></buttons-component>
+      
+    <anleitungen-component header="Anleitung" appearance="primary"><anleitung-text text="Space Pilot ist ein kleines interaktives Spiel. Gesteuert wird die Rakete über die beidem Pfeiltasten nach oben und nach unten um den Ufos auszuweichen. Um mit der Rakete zu schießen, wird die Space Taste benötigt.  Sinn ist es mit seiner Rakete so lange wie möglich durch das Weltall zu fliegen, den Ufos auszuweichen oder auf sie zu schießen, ohne dass man von Ufos erwischt wird."></anleitung-text></anleitungen-component>
     <footer-bar></footer-bar>
 </body>
+<script >
+    var button = document.querySelector('#open-modal');
+    var modal = document.querySelector('anleitungen-component');
+   
+    button.addEventListener('click', function () {
+      modal.isopen = true;
+    });
+  
+    modal.addEventListener('action', function () {
+      console.log('Confirm pressed');
+    });
+  </script>
 
 </html>

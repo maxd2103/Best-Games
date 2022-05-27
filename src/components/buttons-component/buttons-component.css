@@ -3,6 +3,7 @@
 }
 
 .btn {
+
   background: grey;
   color: black;
   border-radius: 4px;
@@ -17,16 +18,18 @@
   align-items: center;
   justify-content: center;
   font-family: inherit;
-  margin-top: 400px;
-  margin-right: 100px;
+
+
 }
 
 .btn.primary {
+
   background: grey;
   color: white;
   box-shadow: 0px 3px 10px black;
   font-family: Roboto;
   letter-spacing: 1px;
+  
 }
 
 .btn.primary:hover {

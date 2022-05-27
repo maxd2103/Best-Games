@@ -14,6 +14,8 @@ export namespace Components {
         "header": string;
         "isopen": boolean;
     }
+    interface BildVorschau {
+    }
     interface ButtonsComponent {
         "aussehen": string;
         "text": string;
@@ -46,8 +48,6 @@ export namespace Components {
     }
     interface NavBar {
     }
-    interface PictureBox {
-    }
     interface StarRating {
         "maxValue": number;
         "value": number;
@@ -65,6 +65,12 @@ declare global {
     var HTMLAnleitungenComponentElement: {
         prototype: HTMLAnleitungenComponentElement;
         new (): HTMLAnleitungenComponentElement;
+    };
+    interface HTMLBildVorschauElement extends Components.BildVorschau, HTMLStencilElement {
+    }
+    var HTMLBildVorschauElement: {
+        prototype: HTMLBildVorschauElement;
+        new (): HTMLBildVorschauElement;
     };
     interface HTMLButtonsComponentElement extends Components.ButtonsComponent, HTMLStencilElement {
     }
@@ -114,12 +120,6 @@ declare global {
         prototype: HTMLNavBarElement;
         new (): HTMLNavBarElement;
     };
-    interface HTMLPictureBoxElement extends Components.PictureBox, HTMLStencilElement {
-    }
-    var HTMLPictureBoxElement: {
-        prototype: HTMLPictureBoxElement;
-        new (): HTMLPictureBoxElement;
-    };
     interface HTMLStarRatingElement extends Components.StarRating, HTMLStencilElement {
     }
     var HTMLStarRatingElement: {
@@ -129,6 +129,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "anleitung-text": HTMLAnleitungTextElement;
         "anleitungen-component": HTMLAnleitungenComponentElement;
+        "bild-vorschau": HTMLBildVorschauElement;
         "buttons-component": HTMLButtonsComponentElement;
         "contact-form": HTMLContactFormElement;
         "cookie-banner": HTMLCookieBannerElement;
@@ -137,7 +138,6 @@ declare global {
         "key-visual": HTMLKeyVisualElement;
         "my-component": HTMLMyComponentElement;
         "nav-bar": HTMLNavBarElement;
-        "picture-box": HTMLPictureBoxElement;
         "star-rating": HTMLStarRatingElement;
     }
 }
@@ -149,6 +149,8 @@ declare namespace LocalJSX {
         "appearance"?: string;
         "header"?: string;
         "isopen"?: boolean;
+    }
+    interface BildVorschau {
     }
     interface ButtonsComponent {
         "aussehen"?: string;
@@ -182,8 +184,6 @@ declare namespace LocalJSX {
     }
     interface NavBar {
     }
-    interface PictureBox {
-    }
     interface StarRating {
         "maxValue"?: number;
         "onRatingUpdated"?: (event: CustomEvent<any>) => void;
@@ -192,6 +192,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "anleitung-text": AnleitungText;
         "anleitungen-component": AnleitungenComponent;
+        "bild-vorschau": BildVorschau;
         "buttons-component": ButtonsComponent;
         "contact-form": ContactForm;
         "cookie-banner": CookieBanner;
@@ -200,7 +201,6 @@ declare namespace LocalJSX {
         "key-visual": KeyVisual;
         "my-component": MyComponent;
         "nav-bar": NavBar;
-        "picture-box": PictureBox;
         "star-rating": StarRating;
     }
 }
@@ -210,6 +210,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "anleitung-text": LocalJSX.AnleitungText & JSXBase.HTMLAttributes<HTMLAnleitungTextElement>;
             "anleitungen-component": LocalJSX.AnleitungenComponent & JSXBase.HTMLAttributes<HTMLAnleitungenComponentElement>;
+            "bild-vorschau": LocalJSX.BildVorschau & JSXBase.HTMLAttributes<HTMLBildVorschauElement>;
             "buttons-component": LocalJSX.ButtonsComponent & JSXBase.HTMLAttributes<HTMLButtonsComponentElement>;
             "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "cookie-banner": LocalJSX.CookieBanner & JSXBase.HTMLAttributes<HTMLCookieBannerElement>;
@@ -218,7 +219,6 @@ declare module "@stencil/core" {
             "key-visual": LocalJSX.KeyVisual & JSXBase.HTMLAttributes<HTMLKeyVisualElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
-            "picture-box": LocalJSX.PictureBox & JSXBase.HTMLAttributes<HTMLPictureBoxElement>;
             "star-rating": LocalJSX.StarRating & JSXBase.HTMLAttributes<HTMLStarRatingElement>;
         }
     }
