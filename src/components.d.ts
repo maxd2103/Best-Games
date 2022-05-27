@@ -46,7 +46,7 @@ export namespace Components {
     }
     interface NavBar {
     }
-    interface SlideshowComponent {
+    interface PictureBox {
     }
     interface StarRating {
         "maxValue": number;
@@ -114,11 +114,11 @@ declare global {
         prototype: HTMLNavBarElement;
         new (): HTMLNavBarElement;
     };
-    interface HTMLSlideshowComponentElement extends Components.SlideshowComponent, HTMLStencilElement {
+    interface HTMLPictureBoxElement extends Components.PictureBox, HTMLStencilElement {
     }
-    var HTMLSlideshowComponentElement: {
-        prototype: HTMLSlideshowComponentElement;
-        new (): HTMLSlideshowComponentElement;
+    var HTMLPictureBoxElement: {
+        prototype: HTMLPictureBoxElement;
+        new (): HTMLPictureBoxElement;
     };
     interface HTMLStarRatingElement extends Components.StarRating, HTMLStencilElement {
     }
@@ -137,7 +137,7 @@ declare global {
         "key-visual": HTMLKeyVisualElement;
         "my-component": HTMLMyComponentElement;
         "nav-bar": HTMLNavBarElement;
-        "slideshow-component": HTMLSlideshowComponentElement;
+        "picture-box": HTMLPictureBoxElement;
         "star-rating": HTMLStarRatingElement;
     }
 }
@@ -182,7 +182,7 @@ declare namespace LocalJSX {
     }
     interface NavBar {
     }
-    interface SlideshowComponent {
+    interface PictureBox {
     }
     interface StarRating {
         "maxValue"?: number;
@@ -200,7 +200,7 @@ declare namespace LocalJSX {
         "key-visual": KeyVisual;
         "my-component": MyComponent;
         "nav-bar": NavBar;
-        "slideshow-component": SlideshowComponent;
+        "picture-box": PictureBox;
         "star-rating": StarRating;
     }
 }
@@ -218,7 +218,7 @@ declare module "@stencil/core" {
             "key-visual": LocalJSX.KeyVisual & JSXBase.HTMLAttributes<HTMLKeyVisualElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
-            "slideshow-component": LocalJSX.SlideshowComponent & JSXBase.HTMLAttributes<HTMLSlideshowComponentElement>;
+            "picture-box": LocalJSX.PictureBox & JSXBase.HTMLAttributes<HTMLPictureBoxElement>;
             "star-rating": LocalJSX.StarRating & JSXBase.HTMLAttributes<HTMLStarRatingElement>;
         }
     }
