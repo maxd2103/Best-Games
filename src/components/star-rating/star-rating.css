@@ -1,0 +1,15 @@
+.StarDiv {
+    position: fixed;
+    margin: 10px;
+}
+
+.StarText {
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: center;
+}
+
+.rating {
+    color: #434343;
+    font-size: 40px;
+  }
