@@ -15,9 +15,9 @@ export namespace Components {
         "aussehen": string;
         "text": string;
     }
-    interface CookieBanner {
-    }
     interface ContactForm {
+    }
+    interface CookieBanner {
     }
     interface ExampleComponent {
         "exampleProp": string;
@@ -43,6 +43,8 @@ export namespace Components {
     }
     interface NavBar {
     }
+    interface SlideshowComponent {
+    }
     interface StarRating {
         "maxValue": number;
         "value": number;
@@ -61,17 +63,17 @@ declare global {
         prototype: HTMLButtonsComponentElement;
         new (): HTMLButtonsComponentElement;
     };
-    interface HTMLCookieBannerElement extends Components.CookieBanner, HTMLStencilElement {
-    }
-    var HTMLCookieBannerElement: {
-        prototype: HTMLCookieBannerElement;
-        new (): HTMLCookieBannerElement;
-    };
     interface HTMLContactFormElement extends Components.ContactForm, HTMLStencilElement {
     }
     var HTMLContactFormElement: {
         prototype: HTMLContactFormElement;
         new (): HTMLContactFormElement;
+    };
+    interface HTMLCookieBannerElement extends Components.CookieBanner, HTMLStencilElement {
+    }
+    var HTMLCookieBannerElement: {
+        prototype: HTMLCookieBannerElement;
+        new (): HTMLCookieBannerElement;
     };
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
     }
@@ -103,6 +105,12 @@ declare global {
         prototype: HTMLNavBarElement;
         new (): HTMLNavBarElement;
     };
+    interface HTMLSlideshowComponentElement extends Components.SlideshowComponent, HTMLStencilElement {
+    }
+    var HTMLSlideshowComponentElement: {
+        prototype: HTMLSlideshowComponentElement;
+        new (): HTMLSlideshowComponentElement;
+    };
     interface HTMLStarRatingElement extends Components.StarRating, HTMLStencilElement {
     }
     var HTMLStarRatingElement: {
@@ -111,14 +119,15 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "anleitungen-component": HTMLAnleitungenComponentElement;
-        "contact-form": HTMLContactFormElement;
         "buttons-component": HTMLButtonsComponentElement;
+        "contact-form": HTMLContactFormElement;
         "cookie-banner": HTMLCookieBannerElement;
         "example-component": HTMLExampleComponentElement;
         "footer-bar": HTMLFooterBarElement;
         "key-visual": HTMLKeyVisualElement;
         "my-component": HTMLMyComponentElement;
         "nav-bar": HTMLNavBarElement;
+        "slideshow-component": HTMLSlideshowComponentElement;
         "star-rating": HTMLStarRatingElement;
     }
 }
@@ -132,9 +141,9 @@ declare namespace LocalJSX {
         "aussehen"?: string;
         "text"?: string;
     }
-    interface CookieBanner {
-    }
     interface ContactForm {
+    }
+    interface CookieBanner {
     }
     interface ExampleComponent {
         "exampleProp"?: string;
@@ -160,6 +169,8 @@ declare namespace LocalJSX {
     }
     interface NavBar {
     }
+    interface SlideshowComponent {
+    }
     interface StarRating {
         "maxValue"?: number;
         "onRatingUpdated"?: (event: CustomEvent<any>) => void;
@@ -167,14 +178,15 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "anleitungen-component": AnleitungenComponent;
-        "contact-form": ContactForm;
         "buttons-component": ButtonsComponent;
+        "contact-form": ContactForm;
         "cookie-banner": CookieBanner;
         "example-component": ExampleComponent;
         "footer-bar": FooterBar;
         "key-visual": KeyVisual;
         "my-component": MyComponent;
         "nav-bar": NavBar;
+        "slideshow-component": SlideshowComponent;
         "star-rating": StarRating;
     }
 }
@@ -183,14 +195,15 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "anleitungen-component": LocalJSX.AnleitungenComponent & JSXBase.HTMLAttributes<HTMLAnleitungenComponentElement>;
-            "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "buttons-component": LocalJSX.ButtonsComponent & JSXBase.HTMLAttributes<HTMLButtonsComponentElement>;
+            "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "cookie-banner": LocalJSX.CookieBanner & JSXBase.HTMLAttributes<HTMLCookieBannerElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "footer-bar": LocalJSX.FooterBar & JSXBase.HTMLAttributes<HTMLFooterBarElement>;
             "key-visual": LocalJSX.KeyVisual & JSXBase.HTMLAttributes<HTMLKeyVisualElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
+            "slideshow-component": LocalJSX.SlideshowComponent & JSXBase.HTMLAttributes<HTMLSlideshowComponentElement>;
             "star-rating": LocalJSX.StarRating & JSXBase.HTMLAttributes<HTMLStarRatingElement>;
         }
     }
