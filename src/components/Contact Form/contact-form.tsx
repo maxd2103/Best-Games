@@ -1,65 +1,40 @@
-import { Component, State, h, } from '@stencil/core';
+import { Component, h, } from '@stencil/core';
 
 @Component({
     tag: 'contact-form',
     styleUrl: 'contact-form.css'
   })
   export class ContactForm {
-  
-    selectedReceiverIds = [102, 103];
-    @State() value: string;
-    @State() selectValue: string;
-    @State() secondSelectValue: string;
-    @State() avOptions: any[] = [
-      { 'id': 101, 'name': 'Mark' },
-      { 'id': 102, 'name': 'Smith' }
-    ];
-  
-    handleSubmit(e) {
-      e.preventDefault();
-      console.log(this.value);
-    }
-  
-    handleChange(event) {
-      this.value = event.target.value;
-  
-      if (event.target.validity.typeMismatch) {
-        console.log('this element is not valid')
-      }
-    }
-  
-    handleSelect(event) {
-      console.log(event.target.value);
-      this.selectValue = event.target.value;
-    }
-  
-    handleSecondSelect(event) {
-      console.log(event.target.value);
-      this.secondSelectValue = event.target.value;
-    }
-  
-    render() {
-      return (
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <label>
-            Email:
-            <input type="email" value={this.value} onInput={(e) => this.handleChange(e)} />
-          </label>
-  
-          <select onInput={(event) => this.handleSelect(event)}>
-            <option value="tictactoe" selected={this.selectValue === 'tictactoe'}>TicTacToe</option>
-            <option value="spaceship" selected={this.selectValue === 'spaceship'}>Space Ship</option>
-            <option value="memorie" selected={this.selectValue === 'memorie'}>Memorie</option>
-          </select>
-  
-          <select onInput={(event) => this.handleSecondSelect(event)}>
-            {this.avOptions.map(recipient => (
-              <option value={recipient.id} selected={this.selectedReceiverIds.indexOf(recipient.id) !== -1}>{recipient.name}</option>
-            ))}
-          </select>
-  
-          <input type="submit" value="Submit" />
-        </form>
+
+render() {
+    return
+<div>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</div>
       );
     }
   }
