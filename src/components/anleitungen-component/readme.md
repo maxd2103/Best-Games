@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type     | Default     |
-| ----------- | ----------- | ----------- | -------- | ----------- |
-| `anleitung` | `anleitung` |             | `string` | `undefined` |
-| `spielname` | `spielname` |             | `string` | `undefined` |
+| Property     | Attribute    | Description | Type      | Default     |
+| ------------ | ------------ | ----------- | --------- | ----------- |
+| `appearance` | `appearance` |             | `string`  | `undefined` |
+| `header`     | `header`     |             | `string`  | `undefined` |
+| `isopen`     | `isopen`     |             | `boolean` | `undefined` |
 
 
 ----------------------------------------------

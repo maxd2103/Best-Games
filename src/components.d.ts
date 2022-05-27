@@ -7,10 +7,15 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AnleitungenComponent {
-        "anleitung": string;
-        "spielname": string;
+        "appearance": string;
+        "header": string;
+        "isopen": boolean;
     }
-    interface ButtonGenerate {
+    interface ButtonsComponent {
+        "aussehen": string;
+        "text": string;
+    }
+    interface CookieBanner {
     }
     interface ContactForm {
     }
@@ -50,11 +55,17 @@ declare global {
         prototype: HTMLAnleitungenComponentElement;
         new (): HTMLAnleitungenComponentElement;
     };
-    interface HTMLButtonGenerateElement extends Components.ButtonGenerate, HTMLStencilElement {
+    interface HTMLButtonsComponentElement extends Components.ButtonsComponent, HTMLStencilElement {
     }
-    var HTMLButtonGenerateElement: {
-        prototype: HTMLButtonGenerateElement;
-        new (): HTMLButtonGenerateElement;
+    var HTMLButtonsComponentElement: {
+        prototype: HTMLButtonsComponentElement;
+        new (): HTMLButtonsComponentElement;
+    };
+    interface HTMLCookieBannerElement extends Components.CookieBanner, HTMLStencilElement {
+    }
+    var HTMLCookieBannerElement: {
+        prototype: HTMLCookieBannerElement;
+        new (): HTMLCookieBannerElement;
     };
     interface HTMLContactFormElement extends Components.ContactForm, HTMLStencilElement {
     }
@@ -100,8 +111,9 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "anleitungen-component": HTMLAnleitungenComponentElement;
-        "button-generate": HTMLButtonGenerateElement;
         "contact-form": HTMLContactFormElement;
+        "buttons-component": HTMLButtonsComponentElement;
+        "cookie-banner": HTMLCookieBannerElement;
         "example-component": HTMLExampleComponentElement;
         "footer-bar": HTMLFooterBarElement;
         "key-visual": HTMLKeyVisualElement;
@@ -112,10 +124,15 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AnleitungenComponent {
-        "anleitung"?: string;
-        "spielname"?: string;
+        "appearance"?: string;
+        "header"?: string;
+        "isopen"?: boolean;
     }
-    interface ButtonGenerate {
+    interface ButtonsComponent {
+        "aussehen"?: string;
+        "text"?: string;
+    }
+    interface CookieBanner {
     }
     interface ContactForm {
     }
@@ -150,8 +167,9 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "anleitungen-component": AnleitungenComponent;
-        "button-generate": ButtonGenerate;
         "contact-form": ContactForm;
+        "buttons-component": ButtonsComponent;
+        "cookie-banner": CookieBanner;
         "example-component": ExampleComponent;
         "footer-bar": FooterBar;
         "key-visual": KeyVisual;
@@ -165,8 +183,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "anleitungen-component": LocalJSX.AnleitungenComponent & JSXBase.HTMLAttributes<HTMLAnleitungenComponentElement>;
-            "button-generate": LocalJSX.ButtonGenerate & JSXBase.HTMLAttributes<HTMLButtonGenerateElement>;
             "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
+            "buttons-component": LocalJSX.ButtonsComponent & JSXBase.HTMLAttributes<HTMLButtonsComponentElement>;
+            "cookie-banner": LocalJSX.CookieBanner & JSXBase.HTMLAttributes<HTMLCookieBannerElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "footer-bar": LocalJSX.FooterBar & JSXBase.HTMLAttributes<HTMLFooterBarElement>;
             "key-visual": LocalJSX.KeyVisual & JSXBase.HTMLAttributes<HTMLKeyVisualElement>;

@@ -90,9 +90,30 @@
             <img class="back-face" src="img-memorie/avengers-logo.svg" alt="Avengers Logo" />
         </div>
     </section>
-</div>
 
-    <footer-bar></footer-bar>
+    <buttons-component class="button" id="open-modal" text="Open Modal" aussehen="primary"></buttons-component>
+      
+    <anleitungen-component header="Modal Header" appearance="primary">
+  <p>
+    Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some
+    reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected,
+    you and I. We're on the same curve, just on opposite ends.
+  </p>
+  </anleitungen-component>
+</div>
+  <footer-bar> </footer-bar>
 </body>
+<script >
+    var button = document.querySelector('#open-modal');
+    var modal = document.querySelector('anleitungen-component');
+   
+    button.addEventListener('click', function () {
+      modal.isopen = true;
+    });
+  
+    modal.addEventListener('action', function () {
+      console.log('Confirm pressed');
+    });
+  </script>
 
 </html>

@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'button-generate',
-  styleUrl: 'button-generate.css',
+  tag: 'cookie-banner',
+  styleUrl: 'cookie-banner.css',
   shadow: true,
 })
-export class ButtonGenerate {
+export class CookieBanner {
 
   render() {
     return (

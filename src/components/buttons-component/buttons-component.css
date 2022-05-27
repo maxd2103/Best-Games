@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+.btn {
+  background: grey;
+  color: black;
+  border-radius: 4px;
+  border: none;
+  padding: 0 12px;
+  height: 38px;
+  outline: none;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  margin-top: 400px;
+  margin-right: 100px;
+}
+
+.btn.primary {
+  background: grey;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: darkgrey;
+}
+
+.btn.secondary {
+  background: grey;
+  color: white
+}
+
+.btn.secondary:hover {
+  background: darkgrey;
+}
+
+.btn.tertiary {
+  background: darkcyan;
+  color: white;
+}
+
+.btn.tertiary:hover {
+  color: purple;
+  background: white;
+}
+
+.btn.warning {
+  background: red;
+  color: white;
+}
+
+.btn.warning:hover {
+  background:grey;
+}
+
+.btn.danger {
+  background: black;
+  color: white;
+}
+
+.btn.danger:hover {
+  background:grey;
+}
