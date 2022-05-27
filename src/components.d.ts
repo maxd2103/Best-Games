@@ -15,6 +15,8 @@ export namespace Components {
         "aussehen": string;
         "text": string;
     }
+    interface ContactForm {
+    }
     interface CookieBanner {
     }
     interface ExampleComponent {
@@ -43,6 +45,10 @@ export namespace Components {
     }
     interface SlideshowComponent {
     }
+    interface StarRating {
+        "maxValue": number;
+        "value": number;
+    }
 }
 declare global {
     interface HTMLAnleitungenComponentElement extends Components.AnleitungenComponent, HTMLStencilElement {
@@ -56,6 +62,12 @@ declare global {
     var HTMLButtonsComponentElement: {
         prototype: HTMLButtonsComponentElement;
         new (): HTMLButtonsComponentElement;
+    };
+    interface HTMLContactFormElement extends Components.ContactForm, HTMLStencilElement {
+    }
+    var HTMLContactFormElement: {
+        prototype: HTMLContactFormElement;
+        new (): HTMLContactFormElement;
     };
     interface HTMLCookieBannerElement extends Components.CookieBanner, HTMLStencilElement {
     }
@@ -99,9 +111,16 @@ declare global {
         prototype: HTMLSlideshowComponentElement;
         new (): HTMLSlideshowComponentElement;
     };
+    interface HTMLStarRatingElement extends Components.StarRating, HTMLStencilElement {
+    }
+    var HTMLStarRatingElement: {
+        prototype: HTMLStarRatingElement;
+        new (): HTMLStarRatingElement;
+    };
     interface HTMLElementTagNameMap {
         "anleitungen-component": HTMLAnleitungenComponentElement;
         "buttons-component": HTMLButtonsComponentElement;
+        "contact-form": HTMLContactFormElement;
         "cookie-banner": HTMLCookieBannerElement;
         "example-component": HTMLExampleComponentElement;
         "footer-bar": HTMLFooterBarElement;
@@ -109,6 +128,7 @@ declare global {
         "my-component": HTMLMyComponentElement;
         "nav-bar": HTMLNavBarElement;
         "slideshow-component": HTMLSlideshowComponentElement;
+        "star-rating": HTMLStarRatingElement;
     }
 }
 declare namespace LocalJSX {
@@ -120,6 +140,8 @@ declare namespace LocalJSX {
     interface ButtonsComponent {
         "aussehen"?: string;
         "text"?: string;
+    }
+    interface ContactForm {
     }
     interface CookieBanner {
     }
@@ -149,9 +171,15 @@ declare namespace LocalJSX {
     }
     interface SlideshowComponent {
     }
+    interface StarRating {
+        "maxValue"?: number;
+        "onRatingUpdated"?: (event: CustomEvent<any>) => void;
+        "value"?: number;
+    }
     interface IntrinsicElements {
         "anleitungen-component": AnleitungenComponent;
         "buttons-component": ButtonsComponent;
+        "contact-form": ContactForm;
         "cookie-banner": CookieBanner;
         "example-component": ExampleComponent;
         "footer-bar": FooterBar;
@@ -159,6 +187,7 @@ declare namespace LocalJSX {
         "my-component": MyComponent;
         "nav-bar": NavBar;
         "slideshow-component": SlideshowComponent;
+        "star-rating": StarRating;
     }
 }
 export { LocalJSX as JSX };
@@ -167,6 +196,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "anleitungen-component": LocalJSX.AnleitungenComponent & JSXBase.HTMLAttributes<HTMLAnleitungenComponentElement>;
             "buttons-component": LocalJSX.ButtonsComponent & JSXBase.HTMLAttributes<HTMLButtonsComponentElement>;
+            "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "cookie-banner": LocalJSX.CookieBanner & JSXBase.HTMLAttributes<HTMLCookieBannerElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "footer-bar": LocalJSX.FooterBar & JSXBase.HTMLAttributes<HTMLFooterBarElement>;
@@ -174,6 +204,7 @@ declare module "@stencil/core" {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "slideshow-component": LocalJSX.SlideshowComponent & JSXBase.HTMLAttributes<HTMLSlideshowComponentElement>;
+            "star-rating": LocalJSX.StarRating & JSXBase.HTMLAttributes<HTMLStarRatingElement>;
         }
     }
 }
