@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AnleitungText {
+        "text": string;
+    }
     interface AnleitungenComponent {
         "appearance": string;
         "header": string;
@@ -51,6 +54,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAnleitungTextElement extends Components.AnleitungText, HTMLStencilElement {
+    }
+    var HTMLAnleitungTextElement: {
+        prototype: HTMLAnleitungTextElement;
+        new (): HTMLAnleitungTextElement;
+    };
     interface HTMLAnleitungenComponentElement extends Components.AnleitungenComponent, HTMLStencilElement {
     }
     var HTMLAnleitungenComponentElement: {
@@ -118,6 +127,7 @@ declare global {
         new (): HTMLStarRatingElement;
     };
     interface HTMLElementTagNameMap {
+        "anleitung-text": HTMLAnleitungTextElement;
         "anleitungen-component": HTMLAnleitungenComponentElement;
         "buttons-component": HTMLButtonsComponentElement;
         "contact-form": HTMLContactFormElement;
@@ -132,6 +142,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AnleitungText {
+        "text"?: string;
+    }
     interface AnleitungenComponent {
         "appearance"?: string;
         "header"?: string;
@@ -177,6 +190,7 @@ declare namespace LocalJSX {
         "value"?: number;
     }
     interface IntrinsicElements {
+        "anleitung-text": AnleitungText;
         "anleitungen-component": AnleitungenComponent;
         "buttons-component": ButtonsComponent;
         "contact-form": ContactForm;
@@ -194,6 +208,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "anleitung-text": LocalJSX.AnleitungText & JSXBase.HTMLAttributes<HTMLAnleitungTextElement>;
             "anleitungen-component": LocalJSX.AnleitungenComponent & JSXBase.HTMLAttributes<HTMLAnleitungenComponentElement>;
             "buttons-component": LocalJSX.ButtonsComponent & JSXBase.HTMLAttributes<HTMLButtonsComponentElement>;
             "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
